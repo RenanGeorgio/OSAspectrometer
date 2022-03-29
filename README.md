@@ -1,10 +1,10 @@
-### Espectrometro CCD
+# Espectrometro CCD
 Script em python para abrir espectrometro CCD da Thorlabs e realizar a captura de dados conectados via GPIB.
 
 ## Requisitos:
 Para o funcionamento do script temos os seguintes requisitos.
 
-# Componentes
+### Componentes
  - National instruments VISA:
        https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#329456
  - Para o conversor NI GPIB-to-USB, você vai precisar do driver NI 488.2
@@ -12,7 +12,7 @@ Para o funcionamento do script temos os seguintes requisitos.
  - Thorlabs:
        https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=3482
 
-# Python packages
+### Python packages
  - pyvisa:
        "pip install pyvisa"
        https://pypi.org/project/PyVISA/
