@@ -1,0 +1,4 @@
+visa
+numpy
+matplotlib
+instrumental-lib

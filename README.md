@@ -1,30 +1,47 @@
-# HP-OSA
-Here is some python code to get spectra from an old HP 70950A optical spectrum analyzer (OSA) connected via GPIB.
+### Espectrometro CCD
+Script em python para abrir espectrometro CCD da Thorlabs e realizar a captura de dados conectados via GPIB.
 
-You'll probably need to change the address of the OSA that is hard-coded into this script. Use 
+## Requisitos:
+Para o funcionamento do script temos os seguintes requisitos.
 
-    import visa
-    rm = visa.ResourceManager()
-    print(rm.list_resources()) 
-
-to get the address of the OSA. 
-
-You'll need some other software to run these scripts:
-
+# Componentes
  - National instruments VISA:
        https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#329456
- - pyvisa:
-       use the Anaconda Prompt and type "pip install pyvisa"
-       https://pypi.org/project/PyVISA/
- - For the NI GPIB-to-USB converter, you need NI 488.2 driver
+ - Para o conversor NI GPIB-to-USB, você vai precisar do driver NI 488.2
        https://www.ni.com/en-us/support/downloads/drivers/download.ni-488-2.html#329025
+ - Thorlabs:
+       https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=3482
 
-Please make a pull request if you make any improvements.
+# Python packages
+ - pyvisa:
+       "pip install pyvisa"
+       https://pypi.org/project/PyVISA/
+ - numpy:
+       "pip install numpy"
+       https://pypi.org/project/numpy/
+ - matplotlib:
+       "pip install matplotlib"
+       https://pypi.org/project/matplotlib/
+ - instrumental:
+       "pip install instrumental-lib"
+       https://pypi.org/project/Instrumental-lib/
+      
 
-The HP_OPA.py script collects a single spectrum, while the "time series" script continuously collects spectra over time.
+## Parametros:
+Argumentos para serem passados ao script de captura de dados
 
-This is MIT licensed, so please do whatever you want with it.
-
-Have fun!
-
-Dan
+ - arg[1]: 
+      'identificador do instrumento OSA'
+            '--adress'
+            type=str 
+            required=True 
+ - arg[2]:
+      'base name acrescido de path relativo para o arquivo de saida contendo os resultados dos dados coletados'
+            '--output' 
+            type=str 
+            required=True
+ - arg[3]:
+      'Tempor antes do inicio da query'
+            '--timeout' 
+            type=int
+            required=False
